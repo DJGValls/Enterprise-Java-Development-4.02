@@ -40,4 +40,7 @@ public class PatientServiceImpl implements PatientService{
     public Optional<Patient> patientsListByDoctorOff(Status status) {
         return patientRepository.findAllByAdmitedBy_Status_Off(Status.OFF);
     }
+
+
+
 }
