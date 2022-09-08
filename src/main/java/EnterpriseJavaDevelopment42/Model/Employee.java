@@ -12,6 +12,7 @@ public class Employee {
     @GeneratedValue
     private int id;
 
+
     @OneToMany
     @JoinColumn(name = "emplyoee_id")
     private List<Employee> employeeId;
