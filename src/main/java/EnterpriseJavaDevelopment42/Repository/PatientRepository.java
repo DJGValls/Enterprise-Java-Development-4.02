@@ -1,6 +1,7 @@
 package EnterpriseJavaDevelopment42.Repository;
 
 import EnterpriseJavaDevelopment42.Model.Patient;
+import EnterpriseJavaDevelopment42.Model.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +15,6 @@ public interface PatientRepository extends JpaRepository<Patient, Integer> {
 
     Optional<Patient> findAllByAdmitedBy_Department(String department);
 
-    Optional<Patient> findAllByAdmitedBy_Status_Off(String status);
+    Optional<Patient> findAllByAdmitedBy_Status_Off(Status status);
 
 }

@@ -1,6 +1,7 @@
 package EnterpriseJavaDevelopment42.Service;
 
 import EnterpriseJavaDevelopment42.Model.Patient;
+import EnterpriseJavaDevelopment42.Model.Status;
 import EnterpriseJavaDevelopment42.Repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,16 +28,16 @@ public class PatientServiceImpl implements PatientService{
 
     @Override
     public Patient get(Date dateOfBirth) {
-        return null;
+        return patientRepository.findAllByDateOfBirthIsBetween(dateOfBirth);
     }
 
     @Override
-    public Optional<Patient> patientsListByDoctorDepartment() {
-        return Optional.empty();
+    public Optional<Patient> patientsListByDoctorDepartment(String department) {
+        return patientRepository.findAllByAdmitedBy_Department(department);
     }
 
     @Override
-    public Optional<Patient> patientsListByDoctorOff() {
-        return Optional.empty();
+    public Optional<Patient> patientsListByDoctorOff(Status status) {
+        return patientRepository.findAllByAdmitedBy_Status_Off(Status.OFF);
     }
 }

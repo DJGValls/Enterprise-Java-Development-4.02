@@ -2,6 +2,7 @@ package EnterpriseJavaDevelopment42.Service;
 
 import EnterpriseJavaDevelopment42.Model.Employee;
 import EnterpriseJavaDevelopment42.Model.Patient;
+import EnterpriseJavaDevelopment42.Model.Status;
 
 import java.util.Date;
 import java.util.List;
@@ -15,8 +16,8 @@ public interface PatientService {
 
     Patient get(Date dateOfBirth); //metodo para devolver patients por su date_of_birth, ejercicio 7
 
-    Optional<Patient> patientsListByDoctorDepartment(); //metodo para devolver una lista de patients por el department de employee, ejercicio 8
+    Optional<Patient> patientsListByDoctorDepartment(String department); //metodo para devolver una lista de patients por el department de employee, ejercicio 8
 
-    Optional<Patient> patientsListByDoctorOff(); //metodo para devolver una lista de patients por el status OFF de employee
+    Optional<Patient> patientsListByDoctorOff(Status status); //metodo para devolver una lista de patients por el status OFF de employee
 
 }
