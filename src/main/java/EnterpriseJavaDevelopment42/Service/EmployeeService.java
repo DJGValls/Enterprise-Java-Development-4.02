@@ -7,11 +7,13 @@ import java.util.List;
 
 public interface EmployeeService {
 
-    List<Employee> list(); //metodo para devolver una lista de todos los doctores, punto 1
+    List<Employee> list(); //metodo para devolver una lista de todos los doctores, ejercicio 1
 
-    Employee get(int employeeId); //metodo para devolver employees por su employee_id
+    Employee get(int employeeId); //metodo para devolver employees por su employee_id, ejercicio 2
 
-    Employee get(Status status); //metodo para devolver employees por su estado
+    Employee get(Status status); //metodo para devolver employees por su estado, ejercicio 3
+
+    Employee get(String department); //metodo para devolver employees por su departamento, ejercicio 4
 
 
 

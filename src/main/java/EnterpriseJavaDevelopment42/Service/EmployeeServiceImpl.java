@@ -14,19 +14,28 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    //Implementación en servicio de ejercicio 1 (mirar servicio)
     @Override
     public List<Employee> list() {
         return employeeRepository.findAll();
     }
 
+    //Implementación en servicio de ejercicio 2 (mirar servicio)
     @Override
     public Employee get(int employeeId) {
-        return (Employee) employeeRepository.findById(employeeId).get();
+        return employeeRepository.findById(employeeId).get();
     }
 
+    //Implementación en servicio de ejercicio 3 (mirar servicio)
     @Override
     public Employee get(Status status) {
         return employeeRepository.findAllByStatus(status);
+    }
+
+    //Implementación en servicio de ejercicio 4 (mirar servicio)
+    @Override
+    public Employee get(String department) {
+        return employeeRepository.findAllByDepartment(department);
     }
 
 

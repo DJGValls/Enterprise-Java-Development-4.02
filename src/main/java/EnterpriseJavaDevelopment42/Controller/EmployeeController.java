@@ -17,19 +17,28 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    //Ejercicio 1
     @GetMapping("/doctors")
     public List<Employee> list(){
         return employeeService.list();
     }
 
+    //Ejercicio 2
     @GetMapping("/doctors/{employeeId}")
     public Employee get(@PathVariable int employeeId){
         return employeeService.get(employeeId);
     }
 
+    //Ejercicio 3
     @GetMapping("/doctors/{status}")
-    public Employee get(@PathVariable Status status ){
+    public Employee get(@PathVariable Status status){
         return employeeService.get(status);
+    }
+
+    //Ejercicio 4
+    @GetMapping("/doctors/{department}")
+    public Employee get(@PathVariable String department){
+        return employeeService.get(department);
     }
 
 }
