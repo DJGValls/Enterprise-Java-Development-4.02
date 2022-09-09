@@ -28,7 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     //Implementación en servicio de ejercicio 3 (mirar servicio)
     @Override
-    public Employee get(Status status) {
+    public List<Employee> getStatus(Status status) {
         return employeeRepository.findAllByStatus(status);
     }
 

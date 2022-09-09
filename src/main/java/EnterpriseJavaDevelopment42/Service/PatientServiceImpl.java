@@ -16,31 +16,35 @@ public class PatientServiceImpl implements PatientService{
     @Autowired
     private PatientRepository patientRepository;
 
+    //Implementación en servicio de ejercicio 5 (mirar servicio)
     @Override
     public List<Patient> list() {
         return patientRepository.findAll();
     }
 
+    //Implementación en servicio de ejercicio 6 (mirar servicio)
     @Override
     public Patient get(int patientId) {
         return patientRepository.findById(patientId).get();
     }
 
+    //Implementación en servicio de ejercicio 7 (mirar servicio)
     @Override
-    public Patient get(Date dateOfBirth) {
-        return patientRepository.findAllByDateOfBirthIsBetween(dateOfBirth);
+    public Patient get(Date dateOfBirth, Date dateOfBirth2) {
+        return patientRepository.findAllByDateOfBirthIsBetween(dateOfBirth, dateOfBirth2);
     }
 
+    //Implementación en servicio de ejercicio 8 (mirar servicio)
     @Override
     public Optional<Patient> patientsListByDoctorDepartment(String department) {
-        return patientRepository.findAllByAdmitedBy_Department(department);
+        return patientRepository.findAllByAdmittedByDepartment(department);
     }
 
+    //Implementación en servicio de ejercicio 9 (mirar servicio)
     @Override
-    public Optional<Patient> patientsListByDoctorOff(Status status) {
-        return patientRepository.findAllByAdmitedBy_Status_Off(Status.OFF);
+    public Optional<Patient> patientsListByDoctorOff() {
+        return patientRepository.findByAdmittedByStatus(Status.OFF);
     }
-
 
 
 }

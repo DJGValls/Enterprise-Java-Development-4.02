@@ -5,11 +5,12 @@ import EnterpriseJavaDevelopment42.Model.Status;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
-    Employee findAllByStatus(Status status);
+    List<Employee> findAllByStatus(Status status);
 
     Employee findAllByDepartment(String department);
 }

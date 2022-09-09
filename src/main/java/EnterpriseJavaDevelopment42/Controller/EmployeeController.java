@@ -5,9 +5,7 @@ import EnterpriseJavaDevelopment42.Model.Employee;
 import EnterpriseJavaDevelopment42.Model.Status;
 import EnterpriseJavaDevelopment42.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,21 +22,21 @@ public class EmployeeController {
     }
 
     //Ejercicio 2
-    @GetMapping("/doctors/{employeeId}")
+    @RequestMapping (value = "/doctors/{employeeId}", method = RequestMethod.GET)
     public Employee get(@PathVariable int employeeId){
         return employeeService.get(employeeId);
     }
 
     //Ejercicio 3
-    @GetMapping("/doctors/{status}")
-    public Employee get(@PathVariable Status status){
-        return employeeService.get(status);
+    @GetMapping("/doctors/OFF")
+    public List<Employee> listStatusOff(){
+        return employeeService.getStatus(Status.OFF);
     }
-
+/*
     //Ejercicio 4
-    @GetMapping("/doctors/{department}")
+    @RequestMapping(value = "/doctors/{department}", method = RequestMethod.GET)
     public Employee get(@PathVariable String department){
         return employeeService.get(department);
     }
-
+ */
 }

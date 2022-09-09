@@ -15,8 +15,9 @@ public class Patient {
 
     private Date dateOfBirth;
 
-    @ManyToOne
-    private Employee admitedBy;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "employee_id")
+    private Employee admittedBy;
 
     public int getPatientId() {
         return patientId;
@@ -30,8 +31,9 @@ public class Patient {
         return dateOfBirth;
     }
 
-    public Employee getAdmitedBy() {
-        return admitedBy;
+
+    public Employee getAdmittedBy() {
+        return admittedBy;
     }
 
     public void setName(String name) {
@@ -42,7 +44,7 @@ public class Patient {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public void setAdmitedBy(Employee admitedBy) {
-        this.admitedBy = admitedBy;
+    public void setAdmittedBy(Employee admittedBy) {
+        this.admittedBy = admittedBy;
     }
 }

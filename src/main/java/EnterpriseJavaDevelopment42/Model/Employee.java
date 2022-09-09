@@ -4,56 +4,57 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "employee")
 public class Employee {
 
     @Id
-    @GeneratedValue
-    private int id;
+    private int employeeId;
 
 
-    @OneToMany
-    @JoinColumn(name = "emplyoee_id")
-    private List<Employee> employeeId;
+    @OneToMany(mappedBy = "admittedBy")
+    private List<Patient> patientList;
 
     private String department;
 
     private String name;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(value = EnumType.STRING)
     private Status status;
 
-    public int getId() {
-        return id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public List<Employee> getEmployeeId() {
-        return employeeId;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public List<Patient> getPatientList() {
+        return patientList;
+    }
+
+    public void setPatientList(List<Patient> patientList) {
+        this.patientList = patientList;
     }
 
     public String getDepartment() {
         return department;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setEmployeeId(List<Employee> employeeId) {
-        this.employeeId = employeeId;
-    }
-
     public void setDepartment(String department) {
         this.department = department;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Status getStatus() {
+        return status;
     }
 
     public void setStatus(Status status) {

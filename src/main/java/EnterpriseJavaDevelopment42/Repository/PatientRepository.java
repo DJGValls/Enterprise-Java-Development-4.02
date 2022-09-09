@@ -11,10 +11,10 @@ import java.util.Optional;
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Integer> {
 
-    Patient findAllByDateOfBirthIsBetween(Date dateOfBirth);
+    Patient findAllByDateOfBirthIsBetween(Date dateOfBirth, Date dateOfBirth2);
 
-    Optional<Patient> findAllByAdmitedBy_Department(String department);
+    Optional<Patient> findAllByAdmittedByDepartment(String department);
 
-    Optional<Patient> findAllByAdmitedBy_Status_Off(Status status);
+    Optional<Patient> findByAdmittedByStatus(Status admittedBy_status);
 
 }
