@@ -44,9 +44,9 @@ public class PatientController {
         return patientService.patientsListByDoctorDepartment(department);
     }
 
-    @GetMapping("patients/doctorOFF/{doctor}")
-    public List<Patient> patientsListByDoctorOff(@PathVariable(value = "doctor") Status admittedBy_status){
-        return patientService.patientsListByDoctorOff(admittedBy_status);
+    @GetMapping("patients/doctorOFF")
+    public List<Patient> patientsListByDoctorOff(){
+        return patientService.patientsListByDoctorOff(Status.OFF);
     }
 
 
