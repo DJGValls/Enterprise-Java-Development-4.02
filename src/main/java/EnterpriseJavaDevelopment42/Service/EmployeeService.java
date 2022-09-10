@@ -14,7 +14,7 @@ public interface EmployeeService {
 
     List<Employee> getStatus(Status status); //metodo para devolver employees por su estado, ejercicio 3
 
-    Employee get(String department); //metodo para devolver employees por su departamento, ejercicio 4
+    List<Employee> getDepartment(String department); //metodo para devolver employees por su departamento, ejercicio 4
 
 
 

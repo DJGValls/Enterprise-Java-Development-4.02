@@ -27,6 +27,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     //Implementación en servicio de ejercicio 3 (mirar servicio)
+
     @Override
     public List<Employee> getStatus(Status status) {
         return employeeRepository.findAllByStatus(status);
@@ -34,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     //Implementación en servicio de ejercicio 4 (mirar servicio)
     @Override
-    public Employee get(String department) {
+    public List<Employee> getDepartment(String department) {
         return employeeRepository.findAllByDepartment(department);
     }
 

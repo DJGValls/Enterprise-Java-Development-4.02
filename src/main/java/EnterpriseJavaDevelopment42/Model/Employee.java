@@ -1,5 +1,7 @@
 package EnterpriseJavaDevelopment42.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,6 +14,7 @@ public class Employee {
 
 
     @OneToMany(mappedBy = "admittedBy")
+    @JsonIgnore
     private List<Patient> patientList;
 
     private String department;

@@ -8,7 +8,7 @@ import java.util.Date;
 public class Patient {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int patientId;
 
     private String name;
@@ -16,8 +16,11 @@ public class Patient {
     private Date dateOfBirth;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "employee_id")
+    @JoinColumn(name = "admitted_by")
     private Employee admittedBy;
+
+    public Patient() {
+    }
 
     public int getPatientId() {
         return patientId;

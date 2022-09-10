@@ -12,5 +12,5 @@ import java.util.Optional;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     List<Employee> findAllByStatus(Status status);
 
-    Employee findAllByDepartment(String department);
+    List<Employee> findAllByDepartment(String department);
 }

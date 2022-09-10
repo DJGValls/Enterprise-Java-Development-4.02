@@ -22,8 +22,8 @@ public class EmployeeController {
     }
 
     //Ejercicio 2
-    @RequestMapping (value = "/doctors/{employeeId}", method = RequestMethod.GET)
-    public Employee get(@PathVariable int employeeId){
+    @GetMapping ("/doctors/doctorsId/{employeeId}")
+    public Employee get(@PathVariable(value = "employeeId") int employeeId){
         return employeeService.get(employeeId);
     }
 
@@ -32,11 +32,11 @@ public class EmployeeController {
     public List<Employee> listStatusOff(){
         return employeeService.getStatus(Status.OFF);
     }
-/*
+
     //Ejercicio 4
-    @RequestMapping(value = "/doctors/{department}", method = RequestMethod.GET)
-    public Employee get(@PathVariable String department){
-        return employeeService.get(department);
+    @GetMapping("/doctors/department/{department}")
+    public List<Employee> getDepartment(@PathVariable(value = "department") String department){
+        return employeeService.getDepartment(department);
     }
- */
+
 }
